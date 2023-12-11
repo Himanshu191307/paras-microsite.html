@@ -1,0 +1,670 @@
+<?php include('header.php');?>
+<!DOCTYPE php>
+<php lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Paras</title>
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <meta content="" name="keywords">
+      <meta content="" name="description">
+      <!-- Favicon -->
+      <link rel="icon" href="img/favicon.png" type="image/x-icon">
+      <!-- Google Web Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+      <!-- Icon Font Stylesheet -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+      <!-- Libraries Stylesheet -->
+      <link href="lib/animate/animate.min.css" rel="stylesheet">
+      <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+      <!-- Customized Bootstrap Stylesheet -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Template Stylesheet -->
+      <link href="css/style.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+      <style>
+         * {
+         box-sizing: border-box;
+         }
+         /* Clear floats after the columns */
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }
+         .responsive {
+         width: 100%;
+         height: auto;
+         }
+         table {
+         border-collapse: collapse;
+         border-spacing: 0;
+         width: 100%;
+         border: 1px solid #ddd;
+         height:200px !important;
+         }
+         th, td {
+         text-align: center;
+         padding: 5px;
+         }
+         tr:nth-child(even){background-color: #f2f2f2}
+         @media (max-width: 768px) {
+         .carousel-inner .carousel-item > div {
+         display: none;
+         }
+         .carousel-inner .carousel-item > div:first-child {
+         display: block;
+         }
+         }
+         .carousel-inner .carousel-item.active,
+         .carousel-inner .carousel-item-start,
+         .carousel-inner .carousel-item-next,
+         .carousel-inner .carousel-item-prev {
+         display: flex;
+         // transition-duration: 10s;
+         }
+         /* display 4 */
+         @media (min-width: 768px) {
+         .carousel-inner .carousel-item-right.active,
+         .carousel-inner .carousel-item-next,
+         .carousel-item-next:not(.carousel-item-start) {
+         transform: translateX(25%) !important;
+         }
+         .carousel-inner .carousel-item-left.active,
+         .carousel-item-prev:not(.carousel-item-end),
+         .active.carousel-item-start,
+         .carousel-item-prev:not(.carousel-item-end) {
+         transform: translateX(-25%) !important;
+         }
+         .carousel-item-next.carousel-item-start, .active.carousel-item-end {
+         transform: translateX(0) !important;
+         }
+         .carousel-inner .carousel-item-prev,
+         .carousel-item-prev:not(.carousel-item-end) {
+         transform: translateX(-25%) !important;
+         }
+         }
+         .middle {
+         transition: .5s ease;
+         opacity: 0;
+         position: absolute;
+         top: 80%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         -ms-transform: translate(-50%, -50%);
+         text-align: center;
+         }
+         /* .container:hover .image {
+         opacity: 0.8;
+         } */
+         .container .middle {
+         opacity: 1;
+         }
+         .text {
+         background-color:transparent;
+         color: white;
+         font-size: 16px;
+         padding: 16px 32px;
+         }
+         .card-img, .card-img-top {
+         border-bottom-left-radius: 35px;
+         border-top-right-radius: 35px;
+         }
+         #BUY{
+         border-bottom-left-radius: 35px;
+         border-top-right-radius: 35px;
+         }
+         /* .holder {
+         width:100%;
+         float: left;
+         }
+         .holder img {
+         width:100%;
+         height: 100%;
+         opacity: 0.8;
+         transition: opacity 1s, transform 0.7s        ease-in;
+         }
+         img:hover {
+         opacity: 1;
+         transform: scale(1.1);
+         box-shadow: 1px 3px 8px 4px rgb(195, 195, 195);
+         } */
+      </style>
+   </head>
+   <body>
+      <!-- Spinner Start -->
+      <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+         <div class="spinner-grow text-primary" role="status"></div>
+      </div>
+      <!-- Spinner End -->
+      <!-- Topbar Start -->
+      <!-- <div class="container-fluid top-bar bg-dark text-light px-0 wow fadeIn" data-wow-delay="0.1s">
+         <div class="row gx-0 align-items-center d-none d-lg-flex">
+             <div class="col-lg-6 px-5 text-start">
+                 <ol class="breadcrumb mb-0">
+                     <li class="breadcrumb-item"><a class="small text-light" href="#">Home</a></li>
+                     <li class="breadcrumb-item"><a class="small text-light" href="#">Career</a></li>
+                     <li class="breadcrumb-item"><a class="small text-light" href="#">Terms</a></li>
+                     <li class="breadcrumb-item"><a class="small text-light" href="#">Privacy</a></li>
+                 </ol>
+             </div>
+             <div class="col-lg-6 px-5 text-end">
+                 <small>Follow us:</small>
+                 <div class="h-100 d-inline-flex align-items-center">
+                     <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-facebook-f"></i></a>
+                     <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-twitter"></i></a>
+                     <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                     <a class="btn-lg-square text-primary pe-0" href=""><i class="fab fa-instagram"></i></a>
+                 </div>
+             </div>
+         </div>
+         </div> -->
+      <!-- Topbar End -->
+      <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+         <a href="index.php" class="navbar-brand ms-4 ms-lg-0">
+            <!-- <h1 class="text-primary m-0">Baker</h1> -->
+            <img src="img/Paras Logo.png" style="width: 100px;">
+         </a>
+         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto p-4 p-lg-0">
+               <a href="index.html" class="nav-item nav-link active">Home</a>
+               <a href="about-us.html" class="nav-item nav-link">About Us</a>
+               <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Product</a>
+                  <div class="dropdown-menu m-0">
+                  <a href="cow-ghee.html" class="dropdown-item">Cow Ghee</a>
+                     <a href="desi-ghee.html" class="dropdown-item">Desi Ghee</a>                     
+                  </div>
+               </div>
+               <a href="buy-online.html#Buynow" class="nav-item nav-link">Buy Online</a>
+               <!-- <a href="https://www.parasdairy.com/" class="nav-item nav-link" target="_blank">Paras Dairy</a> -->
+               <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+            </div>
+            <div class=" d-none d-lg-flex">
+               <div class="flex-shrink-0 btn-lg-square  rounded-circle">
+                  <img src="img/phone.png" class="img-fluid" alt="Responsive image">
+               </div>
+               <div class="ps-3">
+                  <small class=" mb-0" style="color: #ffff;">Call Us</small>
+                  <p class="text-light fs-5 mb-0">+91-11-40674067</p>
+               </div>
+            </div>
+         </div>
+      </nav>
+      <!-- Navbar End -->
+      <!-- Carousel Start -->
+      <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
+         <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative homebaner">
+               <img class="img-fluid" src="img/website bn 1.jpg" alt="">
+               <div class="owl-carousel-inner">
+                  <div class="container">
+                     <div class="row justify-content-start">
+                        <div class="col-lg-8">
+                         <!-- <h1 class="display-1 text-light mb-4 animated slideInDown" >Asli Bharosa </BR>Asli Ghee</h1> -->
+                      
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="owl-carousel-item position-relative homebaner">
+               <img class="img-fluid" src="img/website bn 2.jpg" alt="">
+               <div class="owl-carousel-inner">
+                  <div class="container">
+                     <div class="row justify-content-start">
+                        <div class="col-lg-8">
+                         
+                           <!-- <h1 class="display-1 text-light mb-4 animated slideInDown" >Ghee ke Sath </br> Dabba Free</h1> -->
+                          
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- <div class="owl-carousel-item position-relative homebaner">
+               <img class="img-fluid" src="img/website bn 3.jpg" alt="">
+               <div class="owl-carousel-inner">
+                  <div class="container">
+                     <div class="row justify-content-start">
+                        <div class="col-lg-8">
+                         
+                           <h1 class="display-1 text-light mb-4 animated slideInDown" >Ghee ke Sath </br> Dabba Free</h1>
+                          
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div> -->
+
+           
+         </div>
+      </div>
+      <!-- Carousel End -->
+	  <section class="homeabout">
+      <div class="container-xxl  pt-3 pb-5">
+         <div class="container">
+            <div class="row g-5">
+               <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="row img-twice position-relative">
+                     <img src="img/about us img.jpg" id="about" style="animation: none;">
+                  </div>
+               </div>
+               <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                  <div class="h-100">
+                     <p class="text-primary text-uppercase mb-2">ABOUT PARAS GHEE</p>
+                     <h1 class="display-6 mb-4">Unveiling the Legacy</h1>
+                     <p>Immerse yourself in the timeless legacy of Paras Ghee! For six decades, we've infused our Paras Desi Ghee and Cow Ghee with pure love and cherished, time-tested recipes. This delightful fusion of flavor and aroma is crafted from the finest milk, sourced directly from trusted farmers. More than ghee, it's a commitment to your well-being, providing not just a product but a strong foundation for growth. Every golden drop is a journey through the essence of purity and tradition – where trust meets taste, and every spoonful reflects our enduring commitment to quality and authenticity.</p>
+                     <div class="row homeicon">
+                        <div class="col-md-12">
+						<!-- <ul>
+						<li>
+                           <img src="img/box.png" class="img-fluid">
+                       </li>
+					   	<li>
+                           <img src="img/delivery-mann.png" class="img-fluid"> 
+                         </li>
+					   	<li>
+                           <img src="img/product-development.png" class="img-fluid">
+                        </li>
+					   	<li>
+                           <img src="img/shopping-online.png" class="img-fluid">
+                        </li>
+					   </ul> -->
+                     <!--<a class="btn btn-primary rounded-pill py-3 px-5" href="">Read More</a>-->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+	  </section>
+      <!-- About End -->
+	  <section class="py-5"  style="background-image: url(img/bg.jpg);" >
+           
+         <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+               <p class="text-primary text-uppercase mb-2" style="padding-top: 20px;">Shop with Ease</p>
+               <h1 class="display-6 mb-4" style="color: #fff;" >Buy Now</h1>
+            </div>
+            <div class="row g-4 text-center" >
+			
+               <div class="col-md-12">
+            <div class="buynowdetails">
+            <ul>
+				  <!--<li>
+                     <a href="https://www.amazon.in/PARAS-Desi-Ghee-RT-Pack/dp/B0971NZ5PT" target="_blank"><img src="img/ama.png"class="img-fluid" alt=""></a>
+                 </li> --> 
+				 <li>
+                     <a href="https://www.flipkart.com/paras-desi-ghee-1-l-carton/p/itmfa947y5qvgrrq?pid=GHEF8H3BWEAAZEZH&lid=LSTGHEF8H3BWEAAZEZHLMNBMH&marketplace=FLIPKART&q=paras+ghee+1+l&store=eat%2Fklf%2Ff3s&srno=s_1_1&otracker=AS_QueryStore_OrganicAutoSuggest_1_10_na_na_ps&otracker1=AS_QueryStore_OrganicAutoSuggest_1_10_na_na_ps&fm=search-autosuggest&iid=6fe9bc95-1dba-4058-801f-e0d9d2edc57c.GHEF8H3BWEAAZEZH.SEARCH&ppt=sp&ppn=sp&ssid=y1g09zotnk0000001701518565670&qH=8d05e372d1c8a632" target="_blank"><img src="img/flip.png"class="img-fluid" alt=""></a>
+                 </li>
+				  <li>
+                     <a href="https://blinkit.com/cln/deals/clid/62e39edae609930017c5ba3f" target="_blank"><img src="img/blin.png"class="img-fluid" alt=""></a>
+                 </li>
+				  <li>
+                     <a href="https://www.zeptonow.com/pn/paras-desi-ghee-tetrapack/pvid/bcac8077-6770-4cf2-b7f9-cc046bda40de" target="_blank"><img src="img/zipto.png"class="img-fluid" alt=""></a>
+                 </li>
+				  <li>
+                     <a href="https://www.bigbasket.com/pd/30006679/paras-ghee-1-l-box/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=1&t_s=Ghee" target="_blank"><img src="img/big.png"class="img-fluid" alt=""></a>
+                 </li>
+				  <li>
+                     <a href="#" target="_blank"><img src="img/swiggy2.png"class="img-fluid" alt=""></a>
+                 </li>
+				 <li>
+                     <a href="https://www.jiomart.com/p/groceries/paras-cow-ghee-1-ltr/491670702" target="_blank"><img src="img/jio.png"class="img-fluid" alt=""></a>
+                 </li>
+				  </ul>
+			
+               </div>
+			
+               </div>
+               
+            </div>
+         </div>
+      
+	    </section>
+		 <section class="our-products py-6">
+	  <div class="container-xxl">
+         <div class="container">
+            <div class="row g-5">
+               <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="prodcutss fact-item">
+                   <a href="desi-ghee.php"><img src="img/desi-ghee.jpg" class="img-fluid" alt="Responsive image"></a>
+                  </div>
+               </div>
+               <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                   <div class="prodcutss  fact-item">
+                  <a href="cow-ghee.php"> <img src="img/cow-ghee2.jpg" class="img-fluid" alt="Responsive image"></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+	    </section>
+      <!-- Facts Start -->
+	  <section class="home-secA">
+      <div class="container-xxl py-6">
+         <div class="container">
+            <div class="row g-4">
+               <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                  <div class="fact-item bg-light rounded text-center h-100 p-5">
+                     <img src="img/experience.png" class="img-fluid" alt="Responsive image" style="width: 100px;">
+                     <p class="mb-2" style="margin-top: 20px;font-size: 20px;"><b>Years Experience</b></p>
+                     <h1 class="display-5 mb-0" data-toggle="counter-up">60</h1>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.3s">
+                  <div class="fact-item bg-light rounded text-center h-100 p-5">
+                     <img src="img/distribut.png" class="img-fluid" alt="Responsive image" style="width: 100px;">
+                     <p class="mb-2" style="margin-top: 20px;font-size: 20px;"><b>Retailers</b></p>
+                     <h1 class="display-5 mb-0" data-toggle="counter-up">38000</h1>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.5s">
+                  <div class="fact-item bg-light rounded text-center h-100 p-5">
+                     <img src="img/retaile.png" class="img-fluid" alt="Responsive image" style="width: 100px;">
+                     <p class="mb-2" style="margin-top: 20px;font-size: 20px;"><b>Manufacturing Plant</b></p>
+                     <h1 class="display-5 mb-0" data-toggle="counter-up">5</h1>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.7s">
+                  <div class="fact-item bg-light rounded text-center h-100 p-5">
+                     <img src="img/orde.png" class="img-fluid" alt="Responsive image" style="width: 100px;">
+                     <p class="mb-2" style="margin-top: 20px;font-size: 20px;"><b>Daily milk collection </b></p>
+                     <h1 class="display-5 mb-0" data-toggle="counter-up">35 </h1><span style="margin-top: 20px;font-size: 20px;color: #000000;"><p><b>Lakh Litres</b></p></span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+	  </section>
+      <!-- Facts End -->
+      <!-- Product Start -->
+	       <!-- <div class="container-xxl bg-light2 my-0 py-0 pt-0" >
+         <div class="container" >
+            <div class=" text-light rounded-bottom p-5 my-6 mt-0 wow fadeInUp" data-wow-delay="0.1s" style="background-color:#EAA636 ;">
+               <div class="row g-4 align-items-center" >
+                  <div class="col-lg-6">
+                     <h1 class="display-4 text-light mb-0">The Best Dairy In Your City</h1>
+                  </div>
+                  <div class="col-lg-6 text-lg-end">
+                     <div class="d-inline-flex align-items-center text-start">
+                        <i class="fa fa-phone-alt fa-4x flex-shrink-0"></i>
+                        <div class="ms-4">
+                           <p class="fs-5 fw-bold mb-0">Call Us</p>
+                           <p class="fs-1 fw-bold mb-0"> +91-11-40674067</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        
+         </div>
+      </div>-->
+	  
+      <!--<div class="container-xxl bg-light my-6 py-6 pt-0" >
+         <div class="container" >
+            <div class=" text-light rounded-bottom p-5 my-6 mt-0 wow fadeInUp" data-wow-delay="0.1s" style="background-color:#EAA636 ;">
+               <div class="row g-4 align-items-center" >
+                  <div class="col-lg-6">
+                     <h1 class="display-4 text-light mb-0">The Best Dairy In Your City</h1>
+                  </div>
+                  <div class="col-lg-6 text-lg-end">
+                     <div class="d-inline-flex align-items-center text-start">
+                        <i class="fa fa-phone-alt fa-4x flex-shrink-0"></i>
+                        <div class="ms-4">
+                           <p class="fs-5 fw-bold mb-0">Call Us</p>
+                           <p class="fs-1 fw-bold mb-0"> +91-11-40674067</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        
+         </div>
+      </div>-->
+      <!-- Product End -->
+      <!-- Service Start -->
+	   <section class="mastersafe">
+      <div class="container-xxl py-5">
+         <div class="container">
+            <div class="row g-5">
+               <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                  <p class="text-primary text-uppercase mb-2"></p>
+                  <h3 class="mb-4">Chef Harpal's Journey with Paras Ghee</h3>
+                  <p>
+                  Experience the art of cooking elevated to perfection! Renowned chef Harpal Singh Sokhi, now proudly representing Paras Ghee, brings you a symphony of delectable recipes crafted with the richness of Paras Cow Ghee and Paras Desi Ghee. Explore these gastronomic delights on our social handles, listed beside. Your culinary journey just got more flavorful
+                  </p>
+               </div>
+               <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s" class="img-fluid">
+                  <div class="row">
+                     <div class="column">
+                       <a href="https://www.facebook.com/parasdairy1960" target="_blank"><img src="img/facebook.gif" alt="Snow" style="width:100%" class="img-fluid" id="social"></a>
+                     </div>
+                     <div class="column">
+                        <a href="https://www.instagram.com/parasdairy/" target="_blank"><img src="img/instagram.gif" alt="Forest" style="width:100%" class="img-fluid" id="social"></a>
+                     </div>
+                     <div class="column">
+                        <a href="https://www.youtube.com/user/ParasDairy" target="_blank"><img src="img/YouTube.gif" alt="Mountains" style="width:100%" class="img-fluid" id="social"></a>
+                     </div>
+                   </div>
+                  <!-- <div class="embed-responsive embed-responsive-16by9">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/s4RBDbaUkPw?si=o-OpXh3qk1eSMkNe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div> -->
+               </div>
+            </div>
+         </div>
+      </div>
+	   </section>
+      <!-- Service End -->
+      <!-- Testimonial Start -->
+      <div class="container-xxl bg-light my-0  py-5" style="background-image: url(img/bg.jpg);">
+         <div class="container">
+            <div class="text-center mx-auto mb-5 " data-wow-delay="0.1s" style="max-width: 500px;">
+               <p class="text-primary text-uppercase mb-2" style="padding-top: 20px;">Client's Review</p>
+               <h1 class="display-6 mb-4" style="color: #fff;">Customers Trusted Us</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel" data-wow-delay="0.1s">
+          <div class="testimonial-item bg-white rounded p-4">
+              <div class="d-flex align-items-center mb-4">
+                  <img class="flex-shrink-0 rounded-circle border p-1" src="img/girl.png" alt="">
+                  <div class="ms-4">
+                      <h5 class="mb-1">Ms. Khushboo Sarin</h5>
+                      <span>Homemaker</span>
+                  </div>
+              </div>
+              <p class="mb-0">"With a thick consistency and delightful taste, this ghee enhances various dishes like dal, roti, and khichdi. "</p>
+               <!-- <img src="img/amazon-s.png"class="img-fluid" alt=""> -->
+          </div>
+          <div class="testimonial-item bg-white rounded p-4">
+              <div class="d-flex align-items-center mb-4">
+                  <img class="flex-shrink-0 rounded-circle border p-1" src="img/boy.png" alt="">
+                  <div class="ms-4">
+                      <h5 class="mb-1">Mr. Rajat Sharma</h5>
+                      <span>Tea Connoisseur</span>
+                  </div>
+              </div>
+              <p class="mb-0"> "One of the best quality and finest quality ghee.
+               My mother love this Desi ghee.
+               I recommend to you all."</p>
+          </div>
+          <div class="testimonial-item bg-white rounded p-4">
+            <div class="d-flex align-items-center mb-4">
+                <img class="flex-shrink-0 rounded-circle border p-1" src="img/girl.png" alt="">
+                <div class="ms-4">
+                    <h5 class="mb-1">Mr. Sachin</h5>
+                    <span>Ayurveda Enthusiast</span>
+                </div>
+            </div>
+            <p class="mb-0"> "I love this desi ghee, The perfect taste and superb quality at a reasonable price, with flawless packaging."</p>
+        </div>
+        <div class="testimonial-item bg-white rounded p-4">
+            <div class="d-flex align-items-center mb-4">
+                <img class="flex-shrink-0 rounded-circle border p-1" src="img/boy.png" alt="">
+                <div class="ms-4">
+                    <h5 class="mb-1">Mr. Vikas Verma</h5>
+                    <span>Busy Professional</span>
+                </div>
+            </div>
+            <p class="mb-0"> "This ghee impresses with its fantastic texture, fragrance, and superior nutritional value, making it absolutely delicious."</p>
+        </div>
+        <div class="testimonial-item bg-white rounded p-4">
+            <div class="d-flex align-items-center mb-4">
+                <img class="flex-shrink-0 rounded-circle border p-1" src="img/girl.png" alt="">
+                <div class="ms-4">
+                    <h5 class="mb-1">Mrs. Anjali Khanna</h5>
+                    <span>Health-conscious Parent</span>
+                </div>
+            </div>
+            <p class="mb-0">  "Paras Ghee stands out as the best choice for its authentic homemade taste, unmatched flavors, and rich aroma."</p>
+        </div>
+        <div class="testimonial-item bg-white rounded p-4">
+            <div class="d-flex align-items-center mb-4">
+                <img class="flex-shrink-0 rounded-circle border p-1" src="img/boy.png" alt="">
+                <div class="ms-4">
+                    <h5 class="mb-1">Mr. Karan Kapoor</h5>
+                    <span>Food Explorer</span>
+                </div>
+            </div>
+            <p class="mb-0"> "Paras Ghee is my secret ingredient for enhancing the flavors in various cuisines. It's a versatile addition to my experiments."</p>
+        </div>
+        <div class="testimonial-item bg-white rounded p-4">
+            <div class="d-flex align-items-center mb-4">
+                <img class="flex-shrink-0 rounded-circle border p-1" src="img/boy.png" alt="">
+                <div class="ms-4">
+                    <h5 class="mb-1">Mr. Ankit Patel</h5>
+                    <span>Quality Seeker</span>
+                </div>
+            </div>
+            <p class="mb-0"> "Exceptional quality, the richness of flavor, and impeccable packaging—my go-to ghee."</p>
+        </div>
+          <div class="testimonial-item bg-white rounded p-4">
+              <div class="d-flex align-items-center mb-4">
+                  <img class="flex-shrink-0 rounded-circle border p-1" src="img/boy.png" alt="">
+                  <div class="ms-4">
+                      <h5 class="mb-1">Mr. Sameer Malhotra</h5>
+                      <span>Fitness Enthusiast</span>
+                  </div>
+              </div>
+              <p class="mb-0"> "Impressed by the texture, aroma, and authentic homemade feel—undeniably the finest ghee."</p>
+          </div>
+          <div class="testimonial-item bg-white rounded p-4">
+              <div class="d-flex align-items-center mb-4">
+                  <img class="flex-shrink-0 rounded-circle border p-1" src="img/girl.png" alt="">
+                  <div class="ms-4">
+                      <h5 class="mb-1">Mrs. Ananya Kapoor</h5>
+                      <span>Cooking Enthusiast</span>
+                  </div>
+              </div>
+              <p class="mb-0"> "Exceptional quality, the richness of flavor, and impeccable packaging—my go-to ghee."</p>
+          </div>
+      </div>
+  </div>
+</div>
+      <!-- Testimonial End -->
+            <!-- Footer Start -->
+            <div class="container-fluid bg-dark text-light footer mb-6  py-3 wow fadeIn" data-wow-delay="0.1s">
+         <div class="container py-5">
+            <div class="row g-5">
+               <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Office Address</h4>
+                  <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>The Mira Corporate Suites, B1 & B2,
+                     Ground Floor, Ishwar Nagar,
+                     Mathura Road, New Delhi-110065, India
+                  </p>
+                 
+                  <!--<div class="d-flex pt-2">
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                  </div>-->
+               </div>
+			   <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Connect On</h4>
+                  
+                  <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-11-40674067</p>
+                  <p class="mb-2"><i class="fa fa-envelope me-3"></i>sales.ghee@parasdairy.com</p>
+                  
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Quick Links</h4>
+                  <a class="btn btn-link" href="cow-ghee.php">Cow Ghee</a>
+                  <a class="btn btn-link" href="desi-ghee.php">Desi Ghee</a>                 
+                  <a class="btn btn-link" href="https://www.parasdairy.com/" target="_blank">Paras Dairy</a>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Follow Us</h4>
+                <div class="d-flex pt-2">
+
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://www.facebook.com/parasdairy1960"><i class="fab fa-facebook-f"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://www.instagram.com/parasdairy/"><i class="fab fa-instagram"></i></a>
+					 <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://www.youtube.com/@ParasDairy"><i class="fab fa-youtube"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://twitter.com/parasdairy1960"><i class="fab fa-twitter"></i></a>
+					 <!--<a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>-->
+                  
+				  </div>
+               </div>
+              
+            </div>
+         </div>
+      </div>
+      <!-- Footer End -->
+      <!-- Copyright Start -->
+      <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                  &copy; <a href="#">Paras</a>, All Right Reserved.
+               </div>
+               <div class="col-md-6 text-center text-md-end">
+  Designed By <a href="https://www.januskoncepts.com/" target="_blank">Janus Koncepts</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Copyright End -->
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+      <!-- JavaScript Libraries -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="lib/wow/wow.min.js"></script>
+      <script src="lib/easing/easing.min.js"></script>
+      <script src="lib/waypoints/waypoints.min.js"></script>
+      <script src="lib/counterup/counterup.min.js"></script>
+      <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+      <!-- Template Javascript -->
+      <script src="js/main.js"></script>
+      <script>
+         // var myCarousel = document.querySelector('#myCarousel')
+         // var carousel = new bootstrap.Carousel(myCarousel, {
+         //   interval: 100000
+         // })
+         
+         $('.carousel .carousel-item').each(function(){
+         var minPerSlide = 4;
+         var next = $(this).next();
+         if (!next.length) {
+         next = $(this).siblings(':first');
+         }
+         next.children(':first-child').clone().appendTo($(this));
+         
+         for (var i=0;i<minPerSlide;i++) {
+             next=next.next();
+             if (!next.length) {
+             	next = $(this).siblings(':first');
+           	}
+             
+             next.children(':first-child').clone().appendTo($(this));
+           }
+         });
+      </script>
+   </body>
+</html>
+<?php include('footer.php');?>

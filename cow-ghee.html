@@ -1,0 +1,713 @@
+<?php include('header-pro.php');?>
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Cow Ghee | Paras</title>
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <meta content="" name="keywords">
+      <meta content="" name="description">
+      <!-- Favicon -->
+     <link rel="icon" href="img/favicon.png" type="image/x-icon">
+      <!-- Google Web Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link
+         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700&display=swap"
+         rel="stylesheet">
+      <!-- Icon Font Stylesheet -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+      <!-- Libraries Stylesheet -->
+      <link href="lib/animate/animate.min.css" rel="stylesheet">
+      <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+      <!-- Customized Bootstrap Stylesheet -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Template Stylesheet -->
+      <link href="css/style.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+         * {
+         box-sizing: border-box;
+         padding: 0;
+         margin: 0;
+         font-family: 'Open Sans', sans-serif;
+         }
+         body {
+         line-height: 1.5;
+         /* background-color: #FDF5EB; */
+         }
+         .card-wrapper {
+         max-width: 1100px;
+         margin: 0 auto;
+         }
+         img {
+         width: 100%;
+         display: block;
+         }
+         .img-display {
+         overflow: hidden;
+         }
+         .img-showcase {
+         display: flex;
+        
+         transition: all 0.5s ease;
+        
+         }
+         .product-imgs{border: 2px solid #f5f5f5; padding:5px}
+		  .product-imgs2 img{border: 2px solid #f5f5f5; padding:5px}
+         .img-select {
+         display: flex;
+         }
+		 .buy-now ul{padding:0px; margin:0px;}
+		 .buy-now ul li{     width: 65px;
+    float: left;
+    list-style: none;
+    background: #f5f5f5;
+    margin-right: 10px;
+    padding: 3px;}
+         .img-item {
+         margin: 0.3rem;
+         }
+         .img-item:nth-child(1),
+         .img-item:nth-child(2),
+         .img-item:nth-child(3) {
+         margin-right: 0;
+         }
+         .img-item:hover {
+         opacity: 0.8;
+         }
+         .product-content {
+         padding: 2rem 1rem;
+         }
+         .product-title {
+         font-size: 38px;
+         text-transform: capitalize;
+         font-weight: 700;
+         position: relative;
+         color: #12263a;
+         margin: 1rem 0;
+         }
+         .product-title::after {
+         content: "";
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         height: 4px;
+         width: 80px;
+         background: #12263a;
+         }
+         .product-link {
+         text-decoration: none;
+         text-transform: uppercase;
+         font-weight: 400;
+         font-size: 0.9rem;
+         display: inline-block;
+         margin-bottom: 0.5rem;
+         background: #256eff;
+         color: #fff;
+         padding: 0 0.3rem;
+         transition: all 0.5s ease;
+         }
+         .product-link:hover {
+         opacity: 0.9;
+         }
+         .product-rating {
+         color: #ffc107;
+         }
+         .product-rating span {
+         font-weight: 600;
+         color: #252525;
+         }
+         .product-price {
+         margin: 1rem 0;
+         font-size: 1rem;
+         font-weight: 700;
+         }
+         .product-price span {
+         font-weight: 400;
+         }
+         .last-price span {
+         color: #ffc107;
+         text-decoration: line-through;
+         }
+         .new-price span {
+         color: #ffc107;
+         }
+         .product-detail h2 {
+         text-transform: capitalize;
+         color: #12263a;
+         padding-bottom: 0.6rem;
+         }
+         .product-detail p {
+         font-size: 0.9rem;
+         padding: 0.3rem;
+         opacity: 0.8;
+         }
+         .product-detail ul {
+         margin: 1rem 0;
+         font-size: 0.9rem;
+         }
+         .product-detail ul li {
+         margin: 0;
+         list-style: none;
+         background: url(img/check-1.png) left center no-repeat;
+         background-size: 18px;
+         padding-left: 1.7rem;
+         margin: 0.4rem 0;
+         font-weight: 600;
+         opacity: 0.9;
+         }
+         .product-detail ul li span {
+         font-weight: 400;
+         }
+         .purchase-info {
+         margin: 1.5rem 0;
+         }
+         .purchase-info input,
+         .purchase-info .btn {
+         border: 1.5px solid #ddd;
+         border-radius: 25px;
+         text-align: center;
+         padding: 0.45rem 0.8rem;
+         outline: 0;
+         margin-right: 0.2rem;
+         /* margin-bottom: 1rem; */
+         }
+         .purchase-info input {
+         width: 60px;
+         }
+         .purchase-info .btn {
+         cursor: pointer;
+         color: #fff;
+         }
+         .purchase-info .btn:first-of-type {
+         background: #ffc107;
+         }
+         .purchase-info .btn:last-of-type {
+         background: #ffc107;
+         }
+         .purchase-info .btn:hover {
+         opacity: 0.9;
+         }
+         .social-links {
+         display: flex;
+         align-items: center;
+         }
+         .social-links a {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 32px;
+         height: 32px;
+         color: #ffc107;
+         border: 1px solid #000000;
+         margin: 0 0.2rem;
+         border-radius: 50%;
+         text-decoration: none;
+         font-size: 0.8rem;
+         transition: all 0.5s ease;
+         }
+         .social-links a:hover {
+         background: #ffc107;
+         border-color: transparent;
+         color: #fff;
+         }
+         @media screen and (min-width: 992px) {
+         .card {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         grid-gap: 1.5rem;
+         }
+         .card-wrapper {
+         height: 100vh;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         }
+         .product-imgs {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         }
+         .product-content {
+         padding-top: 0;
+         }
+         }
+         .img-wrapper2 {
+         max-width: 100%;
+         /* height: 25vw; */
+         display: flex;
+         justify-content: center;
+         align-items: flex-start;
+         height: 280px;
+         }
+         img {
+         max-width: 100%;
+         max-height: 100%;
+         }
+         @media screen and (min-width: 576px) {
+         .carousel-inner {
+         display: flex;
+         }
+         .carousel-item {
+         display: block;
+         margin-right: 0;
+         flex: 0 0 calc(100% / 3);
+         }
+         .img-wrapper {
+         height: 21vw;
+         }
+         }
+         .carousel-inner {
+         padding: 1em;
+         }
+         .card2 {
+         margin: 0 0.5em;
+         border-radius: 0;
+         box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+         font-size: 0.9em;
+         height: 500px;
+         }
+         .carousel-control-prev,
+         .carousel-control-next {
+         width: 6vh;
+         height: 6vh;
+         background-color: #e1e1e1;
+         border-radius: 50%;
+         top: 50%;
+         transform: translateY(-50%);
+         opacity: 0.5;
+         }
+         .carousel-control-prev:hover,
+         .carousel-control-next:hover {
+         opacity: 0.8;
+         }
+         .checked {
+         color: orange;
+         }
+         /* .card-body{
+         background-color: #fff;
+         } */
+         .column {
+         float: left;
+         width: 20%;
+         padding: 5px;
+         }
+         /* Clearfix (clear floats) */
+         .row::after {
+         content: "";
+         clear: both;
+         display: table;
+         }
+         #content {
+         display: flex;
+         flex-wrap: wrap;
+         }
+         #content img {
+         width: 25%;
+         min-width: 100px;
+         }
+         ol, ul {
+         padding-left: 0;
+         }
+      </style>
+   </head>
+   <body>
+      <!-- Spinner Start -->
+      <div id="spinner"
+         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+         <div class="spinner-grow text-primary" role="status"></div>
+      </div>
+      <!-- Spinner End -->
+      <!-- Topbar Start -->
+      <!-- <div class="container-fluid top-bar bg-dark text-light px-0 wow fadeIn" data-wow-delay="0.1s">
+         <div class="row gx-0 align-items-center d-none d-lg-flex">
+             <div class="col-lg-6 px-5 text-start">
+                 <ol class="breadcrumb mb-0">
+                     <li class="breadcrumb-item"><a class="small text-light" href="#">Home</a></li>
+                     <li class="breadcrumb-item"><a class="small text-light" href="#">Career</a></li>
+                     <li class="breadcrumb-item"><a class="small text-light" href="#">Terms</a></li>
+                     <li class="breadcrumb-item"><a class="small text-light" href="#">Privacy</a></li>
+                 </ol>
+             </div>
+             <div class="col-lg-6 px-5 text-end">
+                 <small>Follow us:</small>
+                 <div class="h-100 d-inline-flex align-items-center">
+                     <a class="btn-lg-square text-primary border-end rounded-0" href=""><i
+                             class="fab fa-facebook-f"></i></a>
+                     <a class="btn-lg-square text-primary border-end rounded-0" href=""><i
+                             class="fab fa-twitter"></i></a>
+                     <a class="btn-lg-square text-primary border-end rounded-0" href=""><i
+                             class="fab fa-linkedin-in"></i></a>
+                     <a class="btn-lg-square text-primary pe-0" href=""><i class="fab fa-instagram"></i></a>
+                 </div>
+             </div>
+         </div>
+         </div> -->
+      <!-- Topbar End -->
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+            <a href="index.php" class="navbar-brand ms-4 ms-lg-0">
+               <!-- <h1 class="text-primary m-0">Baker</h1> -->
+               <img src="img/Paras Logo.png" style="width: 100px;">
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+               <div class="navbar-nav mx-auto p-4 p-lg-0">
+                  <a href="index.html" class="nav-item nav-link active">Home</a>
+                  <a href="about-us.html" class="nav-item nav-link">About Us</a>
+                  <div class="nav-item dropdown">
+                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Product</a>
+                     <div class="dropdown-menu m-0">
+                     <a href="cow-ghee.html" class="dropdown-item">Cow Ghee</a>
+                        <a href="desi-ghee.html" class="dropdown-item">Desi Ghee</a>                     
+                     </div>
+                  </div>
+                  <a href="buy-online.html#Buynow" class="nav-item nav-link">Buy Online</a>
+                  <!-- <a href="https://www.parasdairy.com/" class="nav-item nav-link" target="_blank">Paras Dairy</a> -->
+                  <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+               </div>
+               <div class=" d-none d-lg-flex">
+                  <div class="flex-shrink-0 btn-lg-square  rounded-circle">
+                     <img src="img/phone.png" class="img-fluid" alt="Responsive image">
+                  </div>
+                  <div class="ps-3">
+                     <small class=" mb-0" style="color: #ffff;">Call Us</small>
+                     <p class="text-light fs-5 mb-0">+91-11-40674067</p>
+                  </div>
+               </div>
+            </div>
+         </nav>
+         <!-- Navbar End -->
+    <!-- Page Header Start -->
+    <div class="container-fluid cowghee-page-header py-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center pt-5 pb-3">
+        </div>
+    </div>
+	<div class="container-fluid cowghee-page-header2 py-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center pt-5 pb-3"> 
+        </div>
+    </div>
+    <!-- Page Header End -->
+<!-- Page Header End -->
+	  <section>
+	   <div class="container">
+	    <div class="row pb-5">
+		<div class="col-md-4">
+            <div class="product-imgs">
+               <div class="img-display">
+                  <div class="img-showcase">
+                     <img src="img/ghee/cow-ghee5.png" class="img-fluid" alt="">                     
+                     <img src="img/ghee/cow ghee 3.png" class="img-fluid" alt="">
+                     <img src="img/ghee/cow ghee 4.png" class="img-fluid" alt="">
+                     <img src="img/ghee/cow ghee 2.png" class="img-fluid" alt="">
+                  </div>
+               </div>
+               <div class="img-select product-imgs2">
+                  <div class="img-item">
+                     <a href="#" data-id="1">
+                     <img src="img/ghee/cow-ghee5.png" class="img-fluid" alt="">
+                     </a>
+                  </div>
+                  <div class="img-item">
+                     <a href="#" data-id="2">
+                     <img src="img/ghee/cow ghee 3.png" class="img-fluid" alt="">
+                     </a>
+                  </div>
+                  <div class="img-item">
+                     <a href="#" data-id="3">
+                     <img src="img/ghee/cow ghee 4.png" class="img-fluid" alt="">
+                     </a>
+                  </div>
+                  <div class="img-item">
+                     <a href="#" data-id="4">
+                     <img src="img/ghee/cow ghee 2.png" class="img-fluid" alt="">
+                     </a>
+                  </div>
+               </div>
+            </div>
+			</div>
+			<div class="col-md-8">
+            <!-- card right -->
+            <div class="product-content">
+               <h2 class="" style="font-size: 40px;color: #12263a;margin-top: 10px;"> Paras Cow Ghee</h1>
+               <!-- <div class="product-price">
+                  <p class="last-price">Price: <span>Rs 600</span> &nbsp; Rs 550</p>
+               </div> -->
+               <div class="product-detail">
+                  <p>Indulge in the pure goodness of Paras Nandan Cow Ghee, crafted from the milk of cows in western and southern India. Experience a delightful fusion of incredible flavor and great aroma, adding richness to every culinary creation.</p> 
+                  <ul>
+                     <li>Energy: <span>897.3 Kcal</span></li>
+                     <li>Protein: <span>0 g</span></li>
+                     <li>Fat,total: <span>99.7g</span></li>
+                     <li>Saturated Fat: <span>66 g</span></li>
+                     <li>Trans Fat: <span>3 g</span></li>
+                  </ul>
+               </div>
+                <div class="buy-now pt-2">
+                  <h5 class=" pb-2">Buy Online </h5>
+                  <ul>
+				  <!--<li>
+                     <a href="#" target="_blank"><img src="img/amazon-s.png"class="img-fluid" alt=""></a>
+                 </li>-->
+				 <li>
+                     <a href="https://www.flipkart.com/paras-cow-ghee-1-l-plastic-bottle/p/itmfdnery4vzyseg?pid=GHEFDNERSMHKGGS5&lid=LSTGHEFDNERSMHKGGS5IQLYYG&marketplace=FLIPKART&q=paras+ghee+1+l&store=eat%2Fklf%2Ff3s&srno=s_1_2&otracker=AS_QueryStore_OrganicAutoSuggest_1_10_na_na_ps&otracker1=AS_QueryStore_OrganicAutoSuggest_1_10_na_na_ps&fm=search-autosuggest&iid=6fe9bc95-1dba-4058-801f-e0d9d2edc57c.GHEFDNERSMHKGGS5.SEARCH&ppt=sp&ppn=sp&ssid=y1g09zotnk0000001701518565670&qH=8d05e372d1c8a632" target="_blank"><img src="img/flipkart-s.png"class="img-fluid" alt=""></a>
+                 </li>
+				  <li>
+                     <a href="https://blinkit.com/prn/paras-nandan-cow-ghee/prid/535734" target="_blank"><img src="img/blinkit-s.png"class="img-fluid" alt=""></a>
+                 </li>
+				  <li>
+                     <a href="https://www.zeptonow.com/pn/paras-nandan-cow-ghee-tetrapack/pvid/67c0621d-d4e4-4d2a-9c29-f1e54b5eea86" target="_blank"><img src="img/zipto-s.png"class="img-fluid" alt=""></a>
+                 </li>
+				  <li>
+                     <a href="https://www.bigbasket.com/pd/40238013/paras-nandan-cow-ghee-contains-vitamin-a-e-d-k-enhances-taste-rich-in-aroma-1-l/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=2&t_s=Nandan+-+Cow+Ghee%252C+Contains+Vitamin+A%252C+E+D+%2526+K%252C+Enhances+Taste%252C+Rich+In+Aroma" target="_blank"><img src="img/bigb-s.png"class="img-fluid" alt=""></a>
+                 </li>
+				  <li>
+                     <a href="#" target="_blank"><img src="img/swiggy-s.png"class="img-fluid" alt=""></a>
+                 </li>
+                 <li>
+                     <a href="https://www.jiomart.com/p/groceries/paras-cow-ghee-1-ltr/491670702" target="_blank"><img src="img/jio-marrt.png"class="img-fluid" alt=""></a>
+                 </li>
+				  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+	  </div>
+	  </section>
+      <!-- Testimonial Start -->
+      <div class="container-xxl bg-light my-0  py-5" style="background-image: url(img/bg.jpg);">
+         <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+               <p class="text-primary text-uppercase mb-2" style="padding-top: 20px;">Client's Review</p>
+               <h1 class="display-6 mb-4" style="color: #fff;">Customers Trusted Us</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+          <div class="testimonial-item bg-white rounded p-4">
+              <div class="d-flex align-items-center mb-4">
+                  <img class="flex-shrink-0 rounded-circle border p-1" src="img/girl.png" alt="">
+                  <div class="ms-4">
+                      <h5 class="mb-1">Ms. Priya Singh</h5>
+                      <span>Homemaker</span>
+                  </div>
+              </div>
+              <p class="mb-0">"Paras Desi Ghee has been a game-changer in my kitchen. The rich aroma and taste make every meal special. A kitchen essential!"</p>
+          </div>
+          <div class="testimonial-item bg-white rounded p-4">
+              <div class="d-flex align-items-center mb-4">
+                  <img class="flex-shrink-0 rounded-circle border p-1" src="img/boy.png" alt="">
+                  <div class="ms-4">
+                      <h5 class="mb-1">Mr. Rajat Sharma</h5>
+                      <span>Tea Connoisseur</span>
+                  </div>
+              </div>
+              <p class="mb-0"> "I start my day with a spoonful of Paras Ghee in my tea. The richness and purity make it a perfect addition to my morning ritual."</p>
+          </div>
+          <div class="testimonial-item bg-white rounded p-4">
+            <div class="d-flex align-items-center mb-4">
+                <img class="flex-shrink-0 rounded-circle border p-1" src="img/girl.png" alt="">
+                <div class="ms-4">
+                    <h5 class="mb-1">Mrs. Meera Joshi</h5>
+                    <span>Ayurveda Enthusiast</span>
+                </div>
+            </div>
+            <p class="mb-0">  "Incorporating Paras Desi Ghee into my Ayurvedic lifestyle has been transformative. It's more than ghee; it's a wellness companion."</p>
+        </div>
+        <div class="testimonial-item bg-white rounded p-4">
+            <div class="d-flex align-items-center mb-4">
+                <img class="flex-shrink-0 rounded-circle border p-1" src="img/boy.png" alt="">
+                <div class="ms-4">
+                    <h5 class="mb-1">Mr. Vikas Verma</h5>
+                    <span>Busy Professional</span>
+                </div>
+            </div>
+            <p class="mb-0"> "Paras Cow Ghee has simplified my cooking. The convenience of its packaging and the quality make it a time-saving kitchen essential."</p>
+        </div>
+        <div class="testimonial-item bg-white rounded p-4">
+            <div class="d-flex align-items-center mb-4">
+                <img class="flex-shrink-0 rounded-circle border p-1" src="img/girl.png" alt="">
+                <div class="ms-4">
+                    <h5 class="mb-1">Mrs. Anjali Khanna</h5>
+                    <span>Health-conscious Parent</span>
+                </div>
+            </div>
+            <p class="mb-0">  "For a health-conscious mom like me, Paras Ghee is a trusted choice. The nutritional benefits of Cow Ghee add a wholesome touch to our meals."</p>
+        </div>
+        <div class="testimonial-item bg-white rounded p-4">
+            <div class="d-flex align-items-center mb-4">
+                <img class="flex-shrink-0 rounded-circle border p-1" src="img/boy.png" alt="">
+                <div class="ms-4">
+                    <h5 class="mb-1">Mr. Karan Kapoor</h5>
+                    <span>Food Explorer</span>
+                </div>
+            </div>
+            <p class="mb-0"> "Paras Ghee is my secret ingredient for enhancing the flavors in various cuisines. It's a versatile addition to my culinary experiments."</p>
+        </div>
+        <div class="testimonial-item bg-white rounded p-4">
+            <div class="d-flex align-items-center mb-4">
+                <img class="flex-shrink-0 rounded-circle border p-1" src="img/boy.png" alt="">
+                <div class="ms-4">
+                    <h5 class="mb-1">Mr. Ankit Patel</h5>
+                    <span>Quality Seeker</span>
+                </div>
+            </div>
+            <p class="mb-0"> "Paras Ghee, be it Desi or Cow Ghee, has set the bar high for quality. The consistency and dedication to purity are truly commendable."</p>
+        </div>
+          <div class="testimonial-item bg-white rounded p-4">
+              <div class="d-flex align-items-center mb-4">
+                  <img class="flex-shrink-0 rounded-circle border p-1" src="img/boy.png" alt="">
+                  <div class="ms-4">
+                      <h5 class="mb-1">Mr. Sameer Malhotra</h5>
+                      <span>Fitness Enthusiast</span>
+                  </div>
+              </div>
+              <p class="mb-0"> "As a fitness enthusiast, Paras Cow Ghee is my go-to choice. It not only adds a burst of flavor to my meals but also aligns with my health goals."</p>
+          </div>
+          <div class="testimonial-item bg-white rounded p-4">
+              <div class="d-flex align-items-center mb-4">
+                  <img class="flex-shrink-0 rounded-circle border p-1" src="img/girl.png" alt="">
+                  <div class="ms-4">
+                      <h5 class="mb-1">Mrs. Ananya Kapoor</h5>
+                      <span>Cooking Enthusiast</span>
+                  </div>
+              </div>
+              <p class="mb-0"> "Paras Ghee brings authenticity to my cooking. The Desi Ghee's time-tested recipes are a reflection of quality and taste."</p>
+          </div>
+      </div>
+  </div>
+</div>
+      <!-- Testimonial End -->
+             <!-- Footer Start -->
+             <div class="container-fluid bg-dark text-light footer mb-6  py-3 wow fadeIn" data-wow-delay="0.1s">
+         <div class="container py-5">
+            <div class="row g-5">
+               <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Office Address</h4>
+                  <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>The Mira Corporate Suites, B1 & B2,
+                     Ground Floor, Ishwar Nagar,
+                     Mathura Road, New Delhi-110065, India
+                  </p>
+                 
+                  <!--<div class="d-flex pt-2">
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                  </div>-->
+               </div>
+			   <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Connect On</h4>
+                  
+                  <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-11-40674067</p>
+                  <p class="mb-2"><i class="fa fa-envelope me-3"></i>sales.ghee@parasdairy.com</p>
+                  
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Quick Links</h4>
+                  <a class="btn btn-link" href="cow-ghee.php">Cow Ghee</a>
+                  <a class="btn btn-link" href="desi-ghee.php">Desi Ghee</a>                 
+                  <a class="btn btn-link" href="https://www.parasdairy.com/" target="_blank">Paras Dairy</a>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Follow Us</h4>
+                <div class="d-flex pt-2">
+
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://www.facebook.com/parasdairy1960"><i class="fab fa-facebook-f"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://www.instagram.com/parasdairy/"><i class="fab fa-instagram"></i></a>
+					 <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://www.youtube.com/@ParasDairy"><i class="fab fa-youtube"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://twitter.com/parasdairy1960"><i class="fab fa-twitter"></i></a>
+					 <!--<a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>-->
+                  
+				  </div>
+               </div>
+              
+            </div>
+         </div>
+      </div>
+      <!-- Footer End -->
+      <!-- Copyright Start -->
+      <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                  &copy; <a href="#">Paras</a>, All Right Reserved.
+               </div>
+               <div class="col-md-6 text-center text-md-end">
+                  <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                  Designed By <a href="https://htmlcodex.com">Janus Koncepts</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Copyright End -->
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+         class="bi bi-arrow-up"></i></a>
+      <!-- JavaScript Libraries -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="lib/wow/wow.min.js"></script>
+      <script src="lib/easing/easing.min.js"></script>
+      <script src="lib/waypoints/waypoints.min.js"></script>
+      <script src="lib/counterup/counterup.min.js"></script>
+      <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+      <!-- Template Javascript -->
+      <script src="js/main.js"></script>
+      <script>
+         const imgs = document.querySelectorAll('.img-select a');
+         const imgBtns = [...imgs];
+         let imgId = 1;
+         
+         imgBtns.forEach((imgItem) => {
+             imgItem.addEventListener('click', (event) => {
+                 event.preventDefault();
+                 imgId = imgItem.dataset.id;
+                 slideImage();
+             });
+         });
+         
+         function slideImage() {
+             const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
+         
+             document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+         }
+         
+         window.addEventListener('resize', slideImage);
+      </script>
+      <script>
+         const multipleItemCarousel = document.querySelector("#carouselExampleControls");
+         
+         if (window.matchMedia("(min-width:576px)").matches) {
+             const carousel = new bootstrap.Carousel(multipleItemCarousel, {
+                 interval: false
+             });
+         
+             var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+             var cardWidth = $(".carousel-item").width();
+         
+             var scrollPosition = 0;
+         
+             $(".carousel-control-next").on("click", function () {
+                 if (scrollPosition < carouselWidth - cardWidth * 4) {
+                     scrollPosition = scrollPosition + cardWidth;
+                     $(".carousel-inner").animate({ scrollLeft: scrollPosition }, 600);
+                 }
+             });
+             $(".carousel-control-prev").on("click", function () {
+                 if (scrollPosition > 0) {
+                     scrollPosition = scrollPosition - cardWidth;
+                     $(".carousel-inner").animate({ scrollLeft: scrollPosition }, 600);
+                 }
+             });
+         } else {a
+             $(multipleItemCarousel).addClass("slide");
+         }
+         
+      </script>
+   </body>
+</html>
+<?php include('footer-pro.php');?>

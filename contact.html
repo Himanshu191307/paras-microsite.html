@@ -1,0 +1,491 @@
+<?php include('header.php');?>
+<!DOCTYPE php>
+<php lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Paras</title>
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <meta content="" name="keywords">
+      <meta content="" name="description">
+      <!-- Favicon -->
+      <link rel="icon" href="img/favicon.png" type="image/x-icon">
+      <!-- Google Web Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+      <!-- Icon Font Stylesheet -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+      <!-- Libraries Stylesheet -->
+      <link href="lib/animate/animate.min.css" rel="stylesheet">
+      <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+      <!-- Customized Bootstrap Stylesheet -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Template Stylesheet -->
+      <link href="css/style.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+      <style>
+         * {
+         box-sizing: border-box;
+         }
+         /* Clear floats after the columns */
+         .row:after {
+         content: "";
+         display: table;
+         clear: both;
+         }
+         .responsive {
+         width: 100%;
+         height: auto;
+         }
+         table {
+         border-collapse: collapse;
+         border-spacing: 0;
+         width: 100%;
+         border: 1px solid #ddd;
+         height:200px !important;
+         }
+         th, td {
+         text-align: center;
+         padding: 5px;
+         }
+         tr:nth-child(even){background-color: #f2f2f2}
+         @media (max-width: 768px) {
+         .carousel-inner .carousel-item > div {
+         display: none;
+         }
+         .carousel-inner .carousel-item > div:first-child {
+         display: block;
+         }
+         }
+         .carousel-inner .carousel-item.active,
+         .carousel-inner .carousel-item-start,
+         .carousel-inner .carousel-item-next,
+         .carousel-inner .carousel-item-prev {
+         display: flex;
+         // transition-duration: 10s;
+         }
+         /* display 4 */
+         @media (min-width: 768px) {
+         .carousel-inner .carousel-item-right.active,
+         .carousel-inner .carousel-item-next,
+         .carousel-item-next:not(.carousel-item-start) {
+         transform: translateX(25%) !important;
+         }
+         .carousel-inner .carousel-item-left.active,
+         .carousel-item-prev:not(.carousel-item-end),
+         .active.carousel-item-start,
+         .carousel-item-prev:not(.carousel-item-end) {
+         transform: translateX(-25%) !important;
+         }
+         .carousel-item-next.carousel-item-start, .active.carousel-item-end {
+         transform: translateX(0) !important;
+         }
+         .carousel-inner .carousel-item-prev,
+         .carousel-item-prev:not(.carousel-item-end) {
+         transform: translateX(-25%) !important;
+         }
+         }
+         .middle {
+         transition: .5s ease;
+         opacity: 0;
+         position: absolute;
+         top: 80%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         -ms-transform: translate(-50%, -50%);
+         text-align: center;
+         }
+         /* .container:hover .image {
+         opacity: 0.8;
+         } */
+         .container .middle {
+         opacity: 1;
+         }
+         .text {
+         background-color:transparent;
+         color: white;
+         font-size: 16px;
+         padding: 16px 32px;
+         }
+         .card-img, .card-img-top {
+         border-bottom-left-radius: 35px;
+         border-top-right-radius: 35px;
+         }
+         #BUY{
+         border-bottom-left-radius: 35px;
+         border-top-right-radius: 35px;
+         }
+         /* .holder {
+         width:100%;
+         float: left;
+         }
+         .holder img {
+         width:100%;
+         height: 100%;
+         opacity: 0.8;
+         transition: opacity 1s, transform 0.7s        ease-in;
+         }
+         img:hover {
+         opacity: 1;
+         transform: scale(1.1);
+         box-shadow: 1px 3px 8px 4px rgb(195, 195, 195);
+         } */
+      </style>
+       <style>
+.contact .info-wrap {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+.contact .info {
+  background: #fff;
+}
+.contact .info i {
+  font-size: 20px;
+  color: #EAA636;
+  float: left;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #EAA636;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #111;
+}
+.contact .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #444444;
+}
+.contact .info:hover i {
+  background: #EAA636;
+  color: #fff;
+}
+.contact .php-email-form {
+  width: 100%;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  padding: 30px;
+  background: #fff;
+}
+.contact .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+.contact .php-email-form .error-message br+br {
+  margin-top: 25px;
+}
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #EAA636;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+.contact .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #EAA636;
+  border-top-color: #eee;
+  animation: animate-loading 1s linear infinite;
+}
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 4px;
+}
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  border-color: #EAA636;
+}
+.contact .php-email-form input {
+  height: 44px;
+}
+.contact .php-email-form textarea {
+  padding: 10px 12px;
+}
+.contact .php-email-form button[type=submit] {
+  background: #EAA636;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+.contact .php-email-form button[type=submit]:hover {
+  background: #EAA636;
+}
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+    </style>
+   </head>
+   <body>
+      <!-- Spinner Start -->
+      <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+         <div class="spinner-grow text-primary" role="status"></div>
+      </div>
+      <!-- Spinner End -->
+      <!-- Topbar Start -->
+      <!-- <div class="container-fluid top-bar bg-dark text-light px-0 wow fadeIn" data-wow-delay="0.1s">
+         <div class="row gx-0 align-items-center d-none d-lg-flex">
+             <div class="col-lg-6 px-5 text-start">
+                 <ol class="breadcrumb mb-0">
+                     <li class="breadcrumb-item"><a class="small text-light" href="#">Home</a></li>
+                     <li class="breadcrumb-item"><a class="small text-light" href="#">Career</a></li>
+                     <li class="breadcrumb-item"><a class="small text-light" href="#">Terms</a></li>
+                     <li class="breadcrumb-item"><a class="small text-light" href="#">Privacy</a></li>
+                 </ol>
+             </div>
+             <div class="col-lg-6 px-5 text-end">
+                 <small>Follow us:</small>
+                 <div class="h-100 d-inline-flex align-items-center">
+                     <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-facebook-f"></i></a>
+                     <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-twitter"></i></a>
+                     <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                     <a class="btn-lg-square text-primary pe-0" href=""><i class="fab fa-instagram"></i></a>
+                 </div>
+             </div>
+         </div>
+         </div> -->
+      <!-- Topbar End -->
+      <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+         <a href="index.php" class="navbar-brand ms-4 ms-lg-0">
+            <!-- <h1 class="text-primary m-0">Baker</h1> -->
+            <img src="img/Paras Logo.png" style="width: 100px;">
+         </a>
+         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto p-4 p-lg-0">
+               <a href="index.php" class="nav-item nav-link active">Home</a>
+               <a href="about-us.php" class="nav-item nav-link">About Us</a>
+               <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Product</a>
+                  <div class="dropdown-menu m-0">
+                  <a href="cow-ghee.php" class="dropdown-item">Cow Ghee</a>
+                     <a href="desi-ghee.php" class="dropdown-item">Desi Ghee</a>                     
+                  </div>
+               </div>
+               <a href="buy-online.php#Buynow" class="nav-item nav-link">Buy Online</a>
+               <!-- <a href="https://www.parasdairy.com/" class="nav-item nav-link" target="_blank">Paras Dairy</a> -->
+               <a href="contact.php" class="nav-item nav-link">Contact Us</a>
+            </div>
+            <div class=" d-none d-lg-flex">
+               <div class="flex-shrink-0 btn-lg-square  rounded-circle">
+                  <img src="img/phone.png" class="img-fluid" alt="Responsive image">
+               </div>
+               <div class="ps-3">
+                  <small class=" mb-0" style="color: #ffff;">Call Us</small>
+                  <p class="text-light fs-5 mb-0">+91-11-40674067</p>
+               </div>
+            </div>
+         </div>
+      </nav>
+      <!-- Navbar End -->
+   
+    <!-- Page Header Start -->
+    <div class="container-fluid contact-page-header py-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center pt-5 pb-3">
+        </div>
+    </div>
+	<div class="container-fluid contact-page-header2 py-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center pt-5 pb-3">
+        </div>
+    </div>
+    <!-- Page Header End -->
+    <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="row justify-content-center" data-aos="fade-up">
+            <div class="col-lg-10">
+              <div class="info-wrap">
+                <div class="row">
+                  <div class="col-lg-4 info">
+                    <i class="bi bi-geo-alt"></i>
+                    <h4>Location:</h4>
+                    <p>The Mira Corporate Suites, B1 & 2,<br>
+                        Ground Floor, Ishwar Nagar,<br>
+                        Mathura Road, New Delhi-110065, India.</p>
+                  </div>
+                  <div class="col-lg-4 info mt-4 mt-lg-0">
+                    <i class="bi bi-envelope"></i>
+                    <h4>Email:</h4>
+                    <p>sales.ghee@parasdairy.com</p>
+                  </div>
+                  <div class="col-lg-4 info mt-4 mt-lg-0">
+                    <i class="bi bi-phone"></i>
+                    <h4>Call:</h4>
+                    <p> +91-11-40674067</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5 justify-content-center" data-aos="fade-up">
+            <div class="col-lg-10">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group mt-3">
+                  <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <div class="my-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section><!-- End Contact Section -->
+      <div class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.3651830808626!2d77.26521027549805!3d28.55879487570516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3eb362a5283%3A0x31989dd09c09f504!2sMira%20Corporate%20Suites!5e0!3m2!1sen!2sin!4v1701337494540!5m2!1sen!2sin" width="100%" height="350" style="border:0;margin-top: 100px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+            <!-- Footer Start -->
+            <div class="container-fluid bg-dark text-light footer mb-6  py-3 wow fadeIn" data-wow-delay="0.1s">
+         <div class="container py-5">
+            <div class="row g-5">
+               <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Office Address</h4>
+                  <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>The Mira Corporate Suites, B1 & B2,
+                     Ground Floor, Ishwar Nagar,
+                     Mathura Road, New Delhi-110065, India
+                  </p>
+                 
+                  <!--<div class="d-flex pt-2">
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                  </div>-->
+               </div>
+			   <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Connect On</h4>
+                  
+                  <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-11-40674067</p>
+                  <p class="mb-2"><i class="fa fa-envelope me-3"></i>sales.ghee@parasdairy.com</p>
+                  
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Quick Links</h4>
+                  <a class="btn btn-link" href="cow-ghee.php">Cow Ghee</a>
+                  <a class="btn btn-link" href="desi-ghee.php">Desi Ghee</a>                 
+                  <a class="btn btn-link" href="https://www.parasdairy.com/" target="_blank">Paras Dairy</a>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Follow Us</h4>
+                <div class="d-flex pt-2">
+
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://www.facebook.com/parasdairy1960"><i class="fab fa-facebook-f"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://www.instagram.com/parasdairy/"><i class="fab fa-instagram"></i></a>
+					 <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://www.youtube.com/@ParasDairy"><i class="fab fa-youtube"></i></a>
+                     <a class="btn btn-square btn-outline-light rounded-circle me-1" href="https://twitter.com/parasdairy1960"><i class="fab fa-twitter"></i></a>
+					 <!--<a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>-->
+                  
+				  </div>
+               </div>
+              
+            </div>
+         </div>
+      </div>
+      <!-- Footer End -->
+      <!-- Copyright Start -->
+      <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                  &copy; <a href="#">Paras</a>, All Right Reserved.
+               </div>
+               <div class="col-md-6 text-center text-md-end">
+  Designed By <a href="https://www.januskoncepts.com/" target="_blank">Janus Koncepts</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Copyright End -->
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+      <!-- JavaScript Libraries -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="lib/wow/wow.min.js"></script>
+      <script src="lib/easing/easing.min.js"></script>
+      <script src="lib/waypoints/waypoints.min.js"></script>
+      <script src="lib/counterup/counterup.min.js"></script>
+      <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+      <!-- Template Javascript -->
+      <script src="js/main.js"></script>
+      <script>
+         // var myCarousel = document.querySelector('#myCarousel')
+         // var carousel = new bootstrap.Carousel(myCarousel, {
+         //   interval: 100000
+         // })
+         
+         $('.carousel .carousel-item').each(function(){
+         var minPerSlide = 4;
+         var next = $(this).next();
+         if (!next.length) {
+         next = $(this).siblings(':first');
+         }
+         next.children(':first-child').clone().appendTo($(this));
+         
+         for (var i=0;i<minPerSlide;i++) {
+             next=next.next();
+             if (!next.length) {
+             	next = $(this).siblings(':first');
+           	}
+             
+             next.children(':first-child').clone().appendTo($(this));
+           }
+         });
+      </script>
+   </body>
+</html>
+<?php include('footer.php');?>
